@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div className="w-full bg-base-200 h-[600px] flex">
-      <div className="bg-base-300 w-[400px]">
+      <div className="bg-base-300 md:w-[400px] w-full">
         <p className="text-center text-2xl mt-10">Contact</p>
         <div className="flex justify-center align-middle gap-x-10 mt-10">
           <div className="hover:bg-primary w-10 h-10 rounded-full flex justify-center align-middle pt-2 cursor-pointer">
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-blue-950"></div>
+      <div className="md:bg-blue-950 bg-white hidden md:block"></div>
     </div>
   );
 }
