@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import bgImage from "../assets/bg.jpg";
 import { Download, Square } from "lucide-react";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import AnimatedText from "../components/AnimatedText";
 import PhoneView from "../components/PhoneView";
 import Header from "../components/Header";
+import { Electricbg } from "../components/ElectricBg";
 
 export default function Home() {
   const navigate = useNavigate();
   return (
-    <div style={{ backgroundImage: `url(${bgImage})` }}>
+    <div>
+      <Electricbg></Electricbg>
       <Header></Header>
       <div className="flex align-middle justify-center md:mt-10 mt-3">
         <div className="avatar">
@@ -37,17 +38,23 @@ export default function Home() {
                   color="primary"
                 ></AnimatedText>
                 <div className="mt-10 ml-[10px] md:ml-[50px] mb-10">
-                  <div
+                  <motion.div
                     className="btn btn-primary mr-10"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
                     onClick={() => {
                       navigate("/portfolio/about");
                     }}
                   >
                     More about me
-                  </div>
-                  <div className="btn btn-outline">
+                  </motion.div>
+                  <motion.div
+                    className="btn btn-outline"
+                    initial={{ scale: 1 }}
+                    whileHover={{ scale: 1.1 }}
+                  >
                     <Download></Download> Get my cv
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
