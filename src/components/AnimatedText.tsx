@@ -7,7 +7,7 @@ interface AnimatedTextInterface {
 
 export default function AnimatedText({ text, color }: AnimatedTextInterface) {
   return (
-    <div className={`flex gap-x-10`}>
+    <div className={`flex gap-x-10 font-[PoppinsBlack]`}>
       <motion.div
         initial="hidden"
         whileInView={"visible"}
