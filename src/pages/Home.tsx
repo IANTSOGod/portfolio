@@ -1,17 +1,15 @@
 import { useNavigate } from "react-router-dom";
-import { Download, Square } from "lucide-react";
-import Footer from "../components/Footer";
+import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
-import { Electricbg } from "../components/ElectricBg";
-import Caroussel from "../components/Caroussel";
+// import { Electricbg } from "../components/ElectricBg";
 
 export default function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      <Electricbg></Electricbg>
+      {/* <Electricbg></Electricbg> */}
       <Header></Header>
       <div className="flex align-middle justify-center md:mt-10 mt-3">
         <div className="avatar">
@@ -28,14 +26,20 @@ export default function Home() {
               />
 
               <div className="pl-5 flex flex-col md:bg-none bg-base-200 mt-[-100px] md:mt-0 w-[370px] md:w-auto z-50 pt-5">
-                <AnimatedText text="Hello I'm" color="white"></AnimatedText>
+                <AnimatedText
+                  text="Hello I'm"
+                  color="white"
+                  size={3}
+                ></AnimatedText>
                 <AnimatedText
                   text="Iantso Christian"
                   color="blue-400"
+                  size={3}
                 ></AnimatedText>
                 <AnimatedText
                   text="FullStack developper"
                   color="primary"
+                  size={3}
                 ></AnimatedText>
                 <div className="mt-10 ml-[10px] md:ml-[50px] mb-10">
                   <motion.div
@@ -61,19 +65,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="mt-[200px] md:mt-0">
-        <div className="flex gap-x-10 md:mt-[300px] mt-0 md:ml-[300px] ml-5 relative">
-          <Square className="text-primary fill-primary rotate-45 mt-2"></Square>
-          <div className="text-3xl relative">
-            <AnimatedText text="My projects" color="white"></AnimatedText>
-          </div>
-          <div className="absolute left-[50px] bottom-[-5px] w-60 h-[4px] bg-blue-500"></div>
-        </div>
-        <Caroussel></Caroussel>
-      </div>
-
-      <Footer></Footer>
     </div>
   );
 }
