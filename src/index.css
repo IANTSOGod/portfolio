@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@font-face {
+  font-family: "PoppinsBlack";
+  src: url("assets/fonts/Poppins-Black.ttf") format("truetype");
+}
+
+@theme {
+  --font-poppins: "PoppinsBlack", sans-serif;
+}

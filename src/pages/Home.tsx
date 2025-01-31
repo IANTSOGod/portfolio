@@ -65,9 +65,9 @@ export default function Home() {
       <div className="mt-[200px] md:mt-0">
         <div className="flex gap-x-10 md:mt-[300px] mt-0 md:ml-[300px] ml-5 relative">
           <Square className="text-primary fill-primary rotate-45 mt-2"></Square>
-          <p className="text-3xl relative">
+          <div className="text-3xl relative">
             <AnimatedText text="My projects" color="white"></AnimatedText>
-          </p>
+          </div>
           <div className="absolute left-[50px] bottom-[-5px] w-60 h-[4px] bg-blue-500"></div>
         </div>
         <div className="mx-auto mb-40 hero bg-base-200 md:w-[1600px] md:h-[800px] w-[400px] h-[400px] pt-[100px] mt-5 flex pl-10">
