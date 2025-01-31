@@ -3,9 +3,9 @@ import { Download, Square } from "lucide-react";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 import AnimatedText from "../components/AnimatedText";
-import PhoneView from "../components/PhoneView";
 import Header from "../components/Header";
 import { Electricbg } from "../components/ElectricBg";
+import Caroussel from "../components/Caroussel";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -70,18 +70,7 @@ export default function Home() {
           </div>
           <div className="absolute left-[50px] bottom-[-5px] w-60 h-[4px] bg-blue-500"></div>
         </div>
-        <div className="mx-auto mb-40 hero bg-base-200 md:w-[1600px] md:h-[800px] w-[400px] h-[400px] pt-[100px] mt-5 flex pl-10">
-          <PhoneView></PhoneView>
-          <div className="ml-10 mt-[-100px] md:mt-0">
-            <AnimatedText text="Delivery" color="white"></AnimatedText>
-            <p className="pl-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, nam
-              quo pariatur consequatur ex expedita modi voluptas quam atque
-              harum delectus, fuga consequuntur, voluptatum accusantium esse
-              repudiandae rem illo cupiditate!
-            </p>
-          </div>
-        </div>
+        <Caroussel></Caroussel>
       </div>
 
       <Footer></Footer>
