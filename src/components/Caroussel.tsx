@@ -2,84 +2,68 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedText from "./AnimatedText";
 
-const slides = [
-  {
-    id: 1,
-    img: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
-    title: "Koodiarana",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur repellat dignissimos inventore deserunt molestias soluta quibusdam excepturi atque impedit aspernatur modi veniam aliquid ipsam sed, provident amet, nemo perferendis magnam!",
-  },
-  {
-    id: 2,
-    img: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
-    title: "Koodiarana 2",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur repellat dignissimos inventore deserunt molestias soluta quibusdam excepturi atque impedit aspernatur modi veniam aliquid ipsam sed, provident amet, nemo perferendis magnam!",
-  },
-  {
-    id: 3,
-    img: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
-    title: "Koodiarana 3",
-    text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur repellat dignissimos inventore deserunt molestias soluta quibusdam excepturi atque impedit aspernatur modi veniam aliquid ipsam sed, provident amet, nemo perferendis magnam!",
-  },
-];
+interface SlideCarroussel {
+  id: number;
+  img: string;
+  title: string;
+  text: string;
+}
 
-export default function Carousel() {
+export default function Carousel({ slides }: { slides: SlideCarroussel[] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    console.log(currentSlide);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    console.log(currentSlide);
   };
 
   return (
-    <div className="carousel w-[400px] md:w-5/6 md:ml-[180px] mx-5 mt-10 mb-20 md:h-[400px]">
+    <div className="relative w-[360px md:w-5/6 max-w-[1800px] mx-auto mt-10 mb-20 overflow-hidden">
       {slides.map((slide, index) => (
-        <motion.div
+        <div
           key={slide.id}
-          className={`carousel-item relative w-full flex flex-col md:flex-row ${
+          className={`carousel-item flex flex-col md:flex-row items-center justify-center transition-opacity duration-700 ${
             index === currentSlide ? "block" : "hidden"
           }`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: index === currentSlide ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
         >
+          {/* Image */}
           <img
             src={slide.img}
-            className="w-full md:h-auto h-[300px] md:w-[600px]"
+            className="w-[340px] h-[340px] md:w-[400px] md:h-[400px] object-cover rounded-lg shadow-lg"
+            alt={slide.title}
           />
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <button onClick={prevSlide} className="btn btn-circle bg-primary">
-              ❮
-            </button>
-            <button onClick={nextSlide} className="btn btn-circle bg-primary">
-              ❯
-            </button>
-          </div>
-          <motion.div
-            className="bg-base-200 w-auto mt-[-100px] h-[500px] md:h-auto md:w-full"
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <div className="md:mt-30 mt-2 p-10">
-              <div className="ml-10 md:ml-0">
-                <AnimatedText text={slide.title} color="primary" size={3} />
-              </div>
-              <p className="md:mt-5 mt-0 md:p-10 p-5">{slide.text}</p>
-            </div>
-            <motion.div
-              className="btn btn-primary mx-35 md:mx-20"
-              initial={{ scale: 1 }}
+
+          {/* Contenu texte */}
+          <div className="bg-base-200 w-full md:w-[calc(100%-400px)] h-auto md:h-[400px] p-5 md:p-10 rounded-lg shadow-lg">
+            <AnimatedText text={slide.title} color="primary" size={3} />
+            <p className="mt-3">{slide.text}</p>
+            <motion.button
+              className="btn btn-primary mt-5"
               whileHover={{ scale: 1.1 }}
             >
               More about this
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </motion.button>
+          </div>
+        </div>
       ))}
+
+      <button
+        onClick={prevSlide}
+        className="absolute btn btn-circle bg-primary left-5 top-1/2 -translate-y-1/2 z-10"
+      >
+        ❮
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute btn btn-circle bg-primary  right-5 top-1/2 -translate-y-1/2 z-10"
+      >
+        ❯
+      </button>
     </div>
   );
 }
