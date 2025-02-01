@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Caroussel from "../components/Caroussel";
 import List from "../components/List";
 import Back from "../assets/back.webp";
+import { Electricbg } from "../components/ElectricBg";
 
 export default function About() {
   const skillslides = [
@@ -30,6 +31,7 @@ export default function About() {
   ];
   return (
     <div className="overflow-x-hidden">
+      <Electricbg></Electricbg>
       <Header />
       <div className="relative flex md:flex-row flex-col justify-center md:mt-30 min-h-screen px-5">
         <motion.img

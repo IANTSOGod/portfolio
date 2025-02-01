@@ -39,7 +39,7 @@ export default function Carousel({ slides }: { slides: SlideCarroussel[] }) {
           />
 
           {/* Contenu texte */}
-          <div className="bg-base-200 w-full md:w-[calc(100%-400px)] h-auto md:h-[400px] p-5 md:p-10 rounded-lg shadow-lg">
+          <div className="bg-base-200 w-[340px] md:w-[calc(100%-400px)] h-auto md:h-[400px] p-5 md:p-10 rounded-lg shadow-lg">
             <AnimatedText text={slide.title} color="primary" size={3} />
             <p className="mt-3">{slide.text}</p>
             <motion.button

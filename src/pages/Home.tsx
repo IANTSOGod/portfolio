@@ -3,13 +3,13 @@ import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 import AnimatedText from "../components/AnimatedText";
 import Header from "../components/Header";
-// import { Electricbg } from "../components/ElectricBg";
+import { Electricbg } from "../components/ElectricBg";
 
 export default function Home() {
   const navigate = useNavigate();
   return (
     <div>
-      {/* <Electricbg></Electricbg> */}
+      <Electricbg></Electricbg>
       <Header></Header>
       <div className="flex align-middle justify-center md:mt-10 mt-3">
         <div className="avatar">
