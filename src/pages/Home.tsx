@@ -13,7 +13,7 @@ export default function Home() {
       <Header></Header>
       <div className="flex align-middle justify-center md:mt-10 mt-3">
         <div className="avatar">
-          <div className="hero md:bg-base-200 bg-none md:w-[900px] w-[400px] h-[600px] md:pt-[100px] md:mt-10 mt-2">
+          <div className="hero md:bg-base-200 bg-none md:w-[900px] w-[360px] h-[600px] md:pt-[100px] md:mt-10 mt-2">
             <div className="hero-content flex-col lg:flex-row">
               <motion.img
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
@@ -25,7 +25,7 @@ export default function Home() {
                 // Animation fluide sur 1.5s
               />
 
-              <div className="pl-5 flex flex-col md:bg-none bg-base-200 mt-[-100px] md:mt-0 w-[370px] md:w-auto z-50 pt-5">
+              <div className="pl-5 flex flex-col md:bg-none bg-base-200 mt-[-100px] md:mt-0 w-[340px] md:w-auto z-50 pt-5">
                 <AnimatedText
                   text="Hello I'm"
                   color="white"
@@ -43,7 +43,7 @@ export default function Home() {
                 ></AnimatedText>
                 <div className="mt-10 ml-[10px] md:ml-[50px] mb-10">
                   <motion.div
-                    className="btn btn-primary mr-10"
+                    className="btn btn-primary mx-auto"
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                     onClick={() => {
@@ -53,7 +53,7 @@ export default function Home() {
                     More about me
                   </motion.div>
                   <motion.div
-                    className="btn btn-outline"
+                    className="btn btn-outline ml-2"
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                   >
