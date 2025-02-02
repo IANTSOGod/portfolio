@@ -7,6 +7,8 @@ import Caroussel from "../components/Caroussel";
 import List from "../components/List";
 import Back from "../assets/back.webp";
 import { Electricbg } from "../components/ElectricBg";
+import Front from "../assets/front.webp";
+import Mobile from "../assets/mobile.jpg";
 
 export default function About() {
   const skillslides = [
@@ -18,13 +20,13 @@ export default function About() {
     },
     {
       id: 2,
-      img: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
+      img: Front,
       title: "Frontend Developer",
       text: "I know frontend basics like HTML/CSS/JS and Tailwind, but I prefer to use ReactJS and NextJS for my projects.",
     },
     {
       id: 3,
-      img: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
+      img: Mobile,
       title: "Mobile Developer",
       text: "I have some experience with React Native and Flutter for mobile development.",
     },
@@ -33,16 +35,16 @@ export default function About() {
     <div className="overflow-x-hidden">
       <Electricbg></Electricbg>
       <Header />
-      <div className="relative flex md:flex-row flex-col justify-center md:mt-30 mt-10 min-h-screen px-5">
+      <div className="relative flex md:flex-row flex-col justify-center md:mt-30 mt-10 min-h-screen px-5 mx-10 md:mx-0">
         <motion.img
           src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           alt="Animated Image"
-          className="max-w-[400px] md:max-w-full md:mt-0 max-h-[400px] object-cover rounded-lg shadow-lg z-10"
+          className="max-w-[400px] md:max-w-full md:mt-0 max-h-[400px] object-cover rounded-lg shadow-lg z-10 "
           initial={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           whileInView={{ opacity: 1, scale: 1 }}
         />
-        <div className="md:w-[600px] w-full bg-base-200 h-[400px] relative z-20 p-5">
+        <div className="md:w-[600px] w-[385px] bg-base-200 h-[400px] relative z-20 p-5 mt-[-100px] md:mt-0">
           {[
             { label: "Nom", value: "RAZAFINDRAZAKA" },
             { label: "Prénoms", value: "Iantso Christian" },
