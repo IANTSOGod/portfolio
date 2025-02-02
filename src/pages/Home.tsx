@@ -19,21 +19,20 @@ export default function Home() {
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                 alt="Image animée"
                 className="max-w-[400px] max-h-[400px] object-cover rounded-lg shadow-lg z-0"
-                initial={{ opacity: 0, scale: 0.8 }} // Départ invisible et plus petit
+                initial={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                // Animation fluide sur 1.5s
               />
 
               <div className="pl-5 flex flex-col md:bg-none bg-base-200 mt-[-100px] md:mt-0 w-[340px] md:w-auto z-50 pt-5">
                 <AnimatedText
                   text="Hello I'm"
-                  color="white"
+                  color="base-300"
                   size={3}
                 ></AnimatedText>
                 <AnimatedText
                   text="Iantso Christian"
-                  color="blue-400"
+                  color="blue-500"
                   size={3}
                 ></AnimatedText>
                 <AnimatedText
@@ -41,9 +40,9 @@ export default function Home() {
                   color="primary"
                   size={3}
                 ></AnimatedText>
-                <div className="mt-10 ml-[10px] md:ml-[50px] mb-10">
+                <div className="mt-10 ml-[10px] md:ml-[50px] mb-10 mx-auto">
                   <motion.div
-                    className="btn btn-primary mx-auto"
+                    className="btn btn-primary"
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                     onClick={() => {
@@ -53,7 +52,7 @@ export default function Home() {
                     More about me
                   </motion.div>
                   <motion.div
-                    className="btn btn-outline ml-2"
+                    className="btn btn-outline ml-2 md:ml-10"
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
                   >

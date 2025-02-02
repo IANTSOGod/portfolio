@@ -33,7 +33,7 @@ export default function About() {
     <div className="overflow-x-hidden">
       <Electricbg></Electricbg>
       <Header />
-      <div className="relative flex md:flex-row flex-col justify-center md:mt-30 min-h-screen px-5">
+      <div className="relative flex md:flex-row flex-col justify-center md:mt-30 mt-10 min-h-screen px-5">
         <motion.img
           src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
           alt="Animated Image"
@@ -60,7 +60,7 @@ export default function About() {
               }
             >
               <p className="text-primary">{item.label}:</p>
-              <AnimatedText text={item.value} color="white" size={1} />
+              <AnimatedText text={item.value} color="base-300" size={1} />
             </div>
           ))}
         </div>
