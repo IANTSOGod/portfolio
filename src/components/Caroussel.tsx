@@ -29,7 +29,7 @@ export default function Carousel({ slides }: { slides: SlideCarroussel[] }) {
   };
 
   useEffect(() => {
-    setFilteredSlide(slides.filter((slide, index) => index === currentSlide));
+    setFilteredSlide(slides.filter((_, index) => index === currentSlide));
   }, [slides, setCurrentSlide, currentSlide]);
 
   return (
