@@ -44,7 +44,7 @@ export default function About() {
           transition={{ duration: 1.5, ease: "easeOut" }}
           whileInView={{ opacity: 1, scale: 1 }}
         />
-        <div className="md:w-[600px] w-[385px] bg-base-200 h-[400px] relative z-20 p-5 mt-[-100px] md:mt-0">
+        <div className="md:w-[600px] maw-w-[400px] bg-base-200 h-[500px] relative z-20 p-5 mt-[-100px] md:mt-0">
           {[
             { label: "Nom", value: "RAZAFINDRAZAKA" },
             { label: "Prénoms", value: "Iantso Christian" },
